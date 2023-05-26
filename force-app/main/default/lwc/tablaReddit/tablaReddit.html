@@ -1,0 +1,16 @@
+<template>
+    <lightning-button variant="brand" class="slds-button" data-id="WS_Button" label="Actualizar Datos" onclick={handle_llamarWs}></lightning-button>
+    <template if:true={itemsReddit.data}>
+        <lightning-datatable 
+            key-field="id"
+            columns={columns}
+            data={itemsReddit.data}
+            hide-checkbox-column
+            default-sort-direction={defaultSortDirection}
+            onrowaction={onHandleDelete}
+            sorted-direction={sortDirection}
+            sorted-by={sortedBy}
+            onsort={onHandleSort}>
+        </lightning-datatable>
+    </template>
+</template>
